@@ -1,9 +1,9 @@
 import { Action } from "../actions/index";
-import { ActionType } from "../actionType";
+import { ActionType } from "../action-type";
 
 const initialState = 0;
 
-export const reducer = (state: number = initialState, action: Action) => {
+const reducer = (state: number = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.DEPOSIT:
       return state + action.payload;
@@ -15,3 +15,5 @@ export const reducer = (state: number = initialState, action: Action) => {
       return state;
   }
 };
+
+export default reducer;
