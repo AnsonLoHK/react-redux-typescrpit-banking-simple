@@ -18,7 +18,7 @@ export function withdrawMoney(amount: number) {
     });
   };
 }
-export function bankrupt(amount: number) {
+export function bankrupt() {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.BANKRUPT,

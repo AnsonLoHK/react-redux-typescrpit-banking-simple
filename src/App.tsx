@@ -8,21 +8,21 @@ import { useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+
   const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(
     actionCreators,
     dispatch
   );
 
+  // TODO: 調用 Reducer中的bank reducer
   const amount = useSelector((state: IRootState) => state.bank);
 
   return (
     <div className="App">
       <h1>{amount}</h1>
-      <button onClick={() => dispatch({ type: "increment-counter" })}>
-        Deposit
-      </button>
-      <button>withdrawMoney</button>
-      <button>bankrupt</button>
+      <button onClick={() => depositMoney(1000)}>Deposit</button>
+      <button onClick={() => withdrawMoney(-500)}>withdrawMoney</button>
+      <button onClick={() => bankrupt()}> bankrupt</button>
     </div>
   );
 }
